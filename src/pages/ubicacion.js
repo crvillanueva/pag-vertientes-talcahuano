@@ -12,20 +12,17 @@ const Ubicacion = () => {
     }
     
     return (
-    <>
-        <Layout>
-            <section className="ubicacion">
-                <div className="frame-mapa">
-                    <iframe src={"/mapa_folium.html"} id="mapa" title="mapa de ubicacion de vertientes"></iframe>
-                </div>
-                <div className="mapa-texto">
+    <Layout>
+        <section className="ubicacion">
+            <div className="mapa-texto">
                 <button onClick={() => setShow(true)}>Instrucciones</button>
-                </div>
-            </section>
-
-            {showModal && <Modal cerrarModal={cerrarModal}/>}
-        </Layout>
-    </>
+            </div>
+            <div className="frame-mapa">
+                <iframe src={"/mapa_folium.html"} id="mapa" title="mapa de ubicacion de vertientes"></iframe>
+            </div>
+        </section>
+        {showModal && <Modal cerrarModal={cerrarModal}/>}
+    </Layout>
 )}
 
 

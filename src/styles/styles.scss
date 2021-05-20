@@ -81,6 +81,7 @@ section {
         text-decoration: none;
         color: var(--texto-primario);
         padding: 1rem;
+        width: 100%;
     }
 }
 
@@ -296,12 +297,15 @@ section.ubicacion {
 
 .modal-instrucciones {
     position: fixed;
+    width: 100%;
     max-width: 400px;
     padding: 2rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--bg-primario-d);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 3px rgba(238, 238, 238, 0.1);
 
     p { font-size: 1.2rem; }
 

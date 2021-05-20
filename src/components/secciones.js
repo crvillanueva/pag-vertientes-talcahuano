@@ -1,11 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'gatsby'
-import cuadroInfo from '../images/cuadro-info-vertientes.jpg'
-import cuadroMapa from '../images/cuadro-mapa.jpg'
-import cuadroGeologia from '../images/cuadro-geologia.jpg'
-import cuadroCalidad from '../images/cuadro-calidad.jpg'
-import cuadroCorrel from '../images/cuadro-correlacion.jpg'
+import { StaticImage } from 'gatsby-plugin-image'
 import ModalMapas from '../components/modalMapas'
 import ModalCorrelacion from '../components/modalCorrelacion'
 
@@ -24,29 +20,30 @@ const Secciones = () => {
         <div className="seccion-central">
             <div className="caja">
                 <Link to="/informacion/">
-                    <img src={cuadroInfo} alt="cuadro información vertientes"/>
+                    <StaticImage src="../images/cuadro-info-vertientes.jpg" alt="cuadro información vertientes"/>
                 </Link>
             </div>
             <div className="caja">
                 <Link to="/ubicacion/">
-                    <img src={cuadroMapa} alt="cuadro mapa ubicacion"/>
+                    <StaticImage src="../images/cuadro-mapa.jpg" alt="cuadro mapa ubicacion"/>
                 </Link>
             </div>
             <div className="caja">
                 <Link to="/geologia/">
-                    <img src={cuadroGeologia} alt="cuadro geologia del area"/>
+                    <StaticImage src="../images/cuadro-geologia.jpg" alt="cuadro geologia del area"/>
                 </Link>
             </div>
             <div className="caja">
-                <img 
-                 src={cuadroCalidad}
+                <StaticImage 
+                 src="../images/cuadro-calidad.jpg"
                  alt="cuadro app calidad y disponibilidad del agua"
                  onClick={() => setShow1(true)}
                  onKeyDown={() => setShow1(true)}
                 />
             </div>
             <div className="caja">
-                <img src={cuadroCorrel}
+                <StaticImage 
+                 src="../images/cuadro-correlacion.jpg"
                  alt="cuadro app correlacion de elementos"
                  onClick={() => setShow2(true)}
                  onKeyDown={() => setShow2(true)}

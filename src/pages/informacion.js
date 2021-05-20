@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
-// import imgQuebrada from '../images/quebrada.jpg'
-// import imgEsquema from '../images/vertiente1.png'
 
 const Informacion = () => (
     <Layout>
