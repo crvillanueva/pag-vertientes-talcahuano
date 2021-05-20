@@ -1,10 +1,12 @@
 import * as React from "react"
+// import { useState } from 'react'
 import Layout from '../components/layout'
 import Secciones from '../components/secciones'
 import Slider from '../components/slider'
 import '../styles/styles.scss'
 
-const IndexPage = () => (
+const IndexPage = () => {
+  return (
   <Layout>
     <Slider/>
     <div className="texto-principal">
@@ -17,6 +19,6 @@ const IndexPage = () => (
     </div>
     <Secciones/>
   </Layout>
-)
+)}
 
 export default IndexPage;

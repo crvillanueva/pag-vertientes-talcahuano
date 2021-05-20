@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
-import imgQuebrada from '../images/quebrada.jpg'
-import imgEsquema from '../images/vertiente1.png'
+// import imgQuebrada from '../images/quebrada.jpg'
+// import imgEsquema from '../images/vertiente1.png'
 
 const Informacion = () => (
     <Layout>
@@ -17,7 +18,7 @@ const Informacion = () => (
                 nivel freático </a>  del agua subterránea intersecta con la superficie, esto ocurre principalmente
                 en los inicios de las quebradas que se disponen en la península.
             </p>
-            <img src={imgEsquema} alt="esquema de vertientes"/>
+            <StaticImage src="../images/vertiente1.png" alt="esquema de vertientes"/>
             <h1>¿Por qué son importantes?</h1>
             <p>
                 Las vertientes han representado de manera histórica en diferentes lugares del mundo,
@@ -38,7 +39,7 @@ const Informacion = () => (
                 de agua para el regadío, diversas actividades domésticas, e incluso el potencial uso 
                 para el consumo humano bajo el debido tratamiento del agua.
             </p>
-            <img src={imgQuebrada} alt=""/>
+            <StaticImage src="../images/quebrada.jpg" alt="imagen quebrada"/>
         </section>
     </Layout>
 )

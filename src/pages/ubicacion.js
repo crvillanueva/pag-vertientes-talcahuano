@@ -1,17 +1,29 @@
 import * as React from 'react'
+import { useState } from 'react'
 import Layout from '../components/layout'
+import Modal from '../components/modalInstrucciones'
 
 const Ubicacion = () => {
+
+    const [showModal, setShow] = useState(false);
+
+    const cerrarModal = () => {
+        setShow(false);
+    }
     
     return (
     <>
         <Layout>
             <section className="ubicacion">
-                <iframe src={"/mapa_folium.html"} id="mapa" title="mapa de ubicacion de vertientes"></iframe>
+                <div className="frame-mapa">
+                    <iframe src={"/mapa_folium.html"} id="mapa" title="mapa de ubicacion de vertientes"></iframe>
+                </div>
                 <div className="mapa-texto">
-                <button onClick={() => console.log('hola')}>Instrucciones</button>
+                <button onClick={() => setShow(true)}>Instrucciones</button>
                 </div>
             </section>
+
+            {showModal && <Modal cerrarModal={cerrarModal}/>}
         </Layout>
     </>
 )}
