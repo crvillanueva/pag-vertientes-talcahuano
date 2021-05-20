@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&display=swap');
+
+$md: 768px;
+$sm: 576px;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primario: hsl(225, 41%, 22%);
+    --bg-primario-d: hsl(226, 47%, 15%);
+    --bg-primario-l: hsl(225, 37%, 35%);
+    --bg-primario-l2: hsl(226, 17%, 22%);
+    --texto-primario: hsl(0, 0%, 93%);
+    --texto-sec: hsl(0, 0%, 77%);
+    --nav-height: 4rem;
+}
+
+body {
+    background-color: var(--bg-primario);
+    font-family: 'Spartan', sans-serif;
+    color: var(--texto-primario);
+}
+
+p {
+    font-family: "Source Sans Pro", sans-serif; 
+    font-size: clamp(1rem, 1.15rem, 1.3rem);
+    line-height: 1.5;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: var(--texto-sec);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--texto-sec);
+}
+
+button {
+    padding: 1rem 2rem;
+    color: #000;
+    background-color: rgb(231, 231, 231);
+    border-radius: 1rem;
+}
+
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+// Navbar
+.navbar {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    height: var(--nav-height);
+    background-color: var(--bg-primario-d);
+
+    a {
+        text-decoration: none;
+        color: var(--texto-primario);
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: auto 0 0 1rem;
+    
+    svg { 
+        height: 3.5rem;
+        fill: none;
+        stroke: #eee;
+        stroke-width:3;
+    }
+
+    span {
+        display: none;
+        font-size: .75rem;
+        font-weight: 500;
+        margin-left: 1rem;
+
+        @media (min-width: $md) {
+            display: block;
+        }
+    }
+}
+
+
+.nav-links {
+    height: 100%;
+    margin-left: auto;
+
+    .menu-icon {
+        height: 100%;
+        padding-left: 4rem;
+
+        @media (min-width: $md) {
+            display: none;
+        }
+    }
+
+    .fa-bars {
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        height: 100%;
+    }
+
+    &:hover, &:focus-within {
+        .nav-items {
+            transform: scale(1, 1);
+        }
+        li {
+            opacity: 1;
+        }
+    }
+}
+
+.nav-items {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: var(--nav-height);
+    background-color: var(--bg-primario-l);
+    transform: scale(1, 0);
+    transition: scale 2s;
+
+    @media (min-width: $md) {
+        all: unset;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        background-color: var(--bg-primario-d);
+    }
+
+    svg {
+        margin-right: .3rem;
+    }
+
+    li {
+        display: flex;
+        font-size: .9rem;
+        padding: 1rem .5rem;
+        list-style: none;
+        transition: opacity 500ms;
+        opacity: 0;
+
+        &:hover {
+            background-color: var(--bg-primario);
+        }
+
+        @media (min-width: $md) {
+            display: flex;
+            align-items: center;
+            padding: 0 .75rem;
+            height: 100%;
+            opacity: 1;
+
+            &:hover {
+                background-color: var(--bg-primario-l);
+            }
+        }
+    }
+}
+
+.slider{
+    display: none;
+
+    @media (min-width: $md) {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    
+        ul {
+            display: flex;
+            width: 300%;
+            animation: cambio 15s infinite;
+        }
+
+        li {
+            width: 100%;
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.texto-principal{
+	background-color: var(--bg-primario-l2);
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+    padding: .75rem .5rem;
+
+    p {
+        text-align: center;
+        margin: .5rem 0;
+        font-family: "Cinzel", serif;
+        font-size: clamp(1rem, 1.25rem, 1.5rem);
+    }
+}
+
+.seccion-central {
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    margin: 1rem .5rem;
+
+    img {
+        padding: .3rem;
+        max-width: 100%;
+        transition: all 200ms;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Pagina Informacion
+
+section.info {
+    img {
+        display: flex;
+        max-width: 95%; 
+        margin: 1rem auto;
+        
+        @media (min-width: $md) {
+            max-width: 75%;
+        }
+    }
+    
+    a {
+        text-decoration: none;
+        color: rgb(198, 116, 212);
+    }
+}
+
+// Pagina ubicacion
+
+section.ubicacion {
+    display: flex;
+    flex-wrap: wrap;
+
+    .mapa-texto {
+        width: 100%;
+    }
+
+    #mapa {
+        width: 100%;
+    }
+}
+
+// .instrucciones {
+//     padding: 1rem;
+// }
+
+
+// Pagina Geologia
+
+section.geo {
+    img {
+        padding: 1rem;
+        max-width: 100%;
+
+        @media (min-width: $sm) {
+            display: flex;
+            margin: 0 auto;
+            max-width: 75%;
+        }
+
+        @media (min-width: $md) {
+            max-width: 50%;
+        }
+
+    }
+    .tipo-roca {
+        border: solid 1px var(--bg-primario-l);
+        border-radius: 1rem;
+        box-shadow: 2px 2px 8px rgba(238, 238, 238, .15);
+        padding: 0 1rem;
+
+        @media (min-width: $md) {
+            display: flex;
+            align-items: center;
+        }   
+    }
+}
+
+.ref {
+    width: 100%;
+    background-color: var(--bg-primario-d);
+    padding: 1rem;
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+@keyframes cambio{
+	0% {margin-left: 0;}
+	28% {margin-left: 0;}
+
+	33% {margin-left: -100%;}
+	61% {margin-left: -100%;}
+
+	66% {margin-left: -200%;}
+	94% {margin-left: -200%;}
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding: .5rem;
+    line-height: 2;
+    background-color: var(--bg-primario-l2);
+    font-size: .8rem;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    @media (min-width: $sm) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
