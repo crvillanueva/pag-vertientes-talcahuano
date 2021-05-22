@@ -33,20 +33,16 @@ const Secciones = () => {
                     <StaticImage src="../images/cuadro-geologia.jpg" alt="cuadro geologia del area"/>
                 </Link>
             </div>
-            <div className="caja">
+            <div className="caja" onClick={() => setShow1(true)} onKeyDown={() => setShow1(true)}>
                 <StaticImage 
                  src="../images/cuadro-calidad.jpg"
                  alt="cuadro app calidad y disponibilidad del agua"
-                 onClick={() => setShow1(true)}
-                 onKeyDown={() => setShow1(true)}
                 />
             </div>
-            <div className="caja">
+            <div className="caja" onClick={() => setShow2(true)} onKeyDown={() => setShow2(true)}>
                 <StaticImage 
                  src="../images/cuadro-correlacion.jpg"
                  alt="cuadro app correlacion de elementos"
-                 onClick={() => setShow2(true)}
-                 onKeyDown={() => setShow2(true)}
                 />
             </div>
             { showModal1 && <ModalMapas cerrarModal={cerrarModal1}/> }
