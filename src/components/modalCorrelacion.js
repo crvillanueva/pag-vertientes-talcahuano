@@ -8,7 +8,7 @@ const modalInstrucciones = ({cerrarModal}) => (
         desde 12 muestras de aguas de vertientes.
       </p>
       <p>
-        Para ver la ubicación de las muestras dirige a la aplicación 
+        Para ver la ubicación de las muestras dirígete a la aplicación 
         del cuadro de calidad y disponibilidad de agua. 
       </p>
       <button onClick={() => cerrarModal()}>Cerrar</button>
